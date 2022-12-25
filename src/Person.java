@@ -5,7 +5,7 @@ public class Person {
 
     public Person(String fullName) {
         this.fullName = fullName;
-           }
+    }
 
     public String getFullName() {
         return fullName;

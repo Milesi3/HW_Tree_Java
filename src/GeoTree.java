@@ -1,6 +1,8 @@
 import java.io.IOException;
 import java.util.ArrayList;
 import java.io.FileWriter;
+import java.util.Iterator;
+
 public class GeoTree implements Output {
     private ArrayList<Node> tree = new ArrayList<>();
 
@@ -8,14 +10,12 @@ public class GeoTree implements Output {
         return tree;
     }
 
+
     public void parentAppend (Person parent, Person children) throws IOException {
         tree.add(new Node(parent, Relationship.parent, children));
         tree.add(new Node(children, Relationship.children, parent));
         outputToFile("tree.txt", tree);
     }
-
-
-
 
 
     @Override
